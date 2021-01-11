@@ -1,0 +1,73 @@
+html,body {
+    height: 100%;
+  }
+
+.v-center{
+    display: flex;
+    align-items: center;
+}
+
+.screen{
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    margin-left: 0;
+}
+
+.screen.hidden{
+    margin-left: -50%;
+    opacity: 0;
+    display: none;
+}
+
+.card{
+    min-height: 150px;
+    min-width: 100px;
+    max-height: 150px;
+    width: 100%;
+    background-color: transparent;
+    perspective: 1000px;
+    border: 0 none;
+    cursor: pointer;
+}
+
+.card.active > .card-inner{
+    transform: rotateY(0deg);
+}
+
+.card > .back{
+    background-image: url("images/cards/cover.png");
+}
+
+.card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transform: rotateY(180deg);
+}
+
+.card .card-front, 
+.card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card .card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 150px;
+}
